@@ -42,7 +42,7 @@ export default function Home() {
       </div>
       <span>
         BUILD_ARGS_TEST:{" "}
-        {process.env.NEXT_PUBLIC_TEST ? (
+        {process.env.NEXT_PUBLIC_BUILD_ARGS_TEST ? (
           <span className="font-bold text-green-500">
             {process.env.NEXT_PUBLIC_BUILD_ARGS_TEST}
           </span>
