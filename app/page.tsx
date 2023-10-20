@@ -1,6 +1,8 @@
 "use client"
 
+import Image from "next/image";
 import { useState } from "react";
+import cryingCatMeme from '@/public/crying-cat-meme.png'
 
 const buttonColorProps =
   "p-3 rounded-md bg-slate-200 hover:bg-slate-100 transition-colors disabled:bg-slate-100";
@@ -21,6 +23,7 @@ export default function Home() {
   return (
     <div className="p-10 flex flex-col items-center gap-10">
       <h1 className="text-4xl">Next.js + Podman = ❤️</h1>
+      <Image alt="Crying Cat" src={cryingCatMeme} height={300} width={300} />
       <p className="font-bold text-xl">Count: {count}</p>
       <div className="flex gap-4">
         <button
