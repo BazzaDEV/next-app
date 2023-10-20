@@ -16,8 +16,10 @@ COPY --from=build-deps /src/app/node_modules ./node_modules
 
 FROM base as build
 
-# ARG TEST
-# ENV NEXT_PUBLIC_TEST=${TEST}
+ARG BUILD_ARGS_TEST
+ENV NEXT_PUBLIC_BUILD_ARGS_TEST=${BUILD_ARGS_TEST}
+
+ENV NEXT_PUBLIC_ENV_TEST
 
 ENV NODE_ENV production
 

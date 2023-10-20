@@ -41,10 +41,20 @@ export default function Home() {
         </button>
       </div>
       <span>
-        ENV:{" "}
+        BUILD_ARGS_TEST:{" "}
         {process.env.NEXT_PUBLIC_TEST ? (
           <span className="font-bold text-green-500">
-            {process.env.NEXT_PUBLIC_TEST}
+            {process.env.NEXT_PUBLIC_BUILD_ARGS_TEST}
+          </span>
+        ) : (
+          <span className="font-bold text-red-500">Failed :(</span>
+        )}
+      </span>
+      <span>
+        ENV_TEST:{" "}
+        {process.env.NEXT_PUBLIC_ENV_TEST ? (
+          <span className="font-bold text-green-500">
+            {process.env.NEXT_PUBLIC_ENV_TEST}
           </span>
         ) : (
           <span className="font-bold text-red-500">Failed :(</span>
