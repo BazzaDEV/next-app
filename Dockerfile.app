@@ -1,19 +1,5 @@
+FROM next-app-deps as deps
 FROM node:18-alpine as base
-
-FROM base as build-deps
-
-WORKDIR /src/app
-
-COPY package.json pnpm-lock.yaml ./
-RUN yarn global add pnpm && \
-    pnpm i --frozen-lockfile
-
-FROM scratch as deps
-
-WORKDIR /src/app
-
-COPY --from=build-deps /src/app/node_modules ./node_modules
-
 FROM base as build
 
 ARG TEST
